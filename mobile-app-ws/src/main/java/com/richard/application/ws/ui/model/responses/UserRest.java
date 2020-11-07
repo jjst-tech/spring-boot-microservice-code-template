@@ -30,6 +30,9 @@ public class UserRest implements Serializable {
   /** Last Name */
   private String lastName;
   
+  /** Age */
+  private int age;
+  
   /** Email */
   private String email;
   
