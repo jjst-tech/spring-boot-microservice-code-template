@@ -19,7 +19,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class UserRequestSigup implements Serializable {
+public class UserSignUp implements Serializable {
   
   /** serialVersionUID */
   private static final long serialVersionUID = 1L;

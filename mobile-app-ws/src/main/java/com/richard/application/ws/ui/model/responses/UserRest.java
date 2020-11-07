@@ -16,19 +16,24 @@ import lombok.Setter;
 
 /**
  * @author richard
- *
  */
 @Getter
 @Setter
-public class UserResponse implements Serializable {
+public class UserRest implements Serializable {
   
   /** serialVersionUID */
   private static final long serialVersionUID = 1L;
   
-  /** firstName */
+  /** First Name */
   private String firstName;
   
-  /** lastName */
+  /** Last Name */
   private String lastName;
+  
+  /** Email */
+  private String email;
+  
+  /** User Id */
+  private String UserId;
   
 }
