@@ -39,7 +39,4 @@ public class UserSignUp implements Serializable {
   /** Email */
   private String email;
   
-  /** User Id */
-  private String UserId;
-  
 }
