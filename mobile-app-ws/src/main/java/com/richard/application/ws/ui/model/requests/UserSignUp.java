@@ -30,4 +30,16 @@ public class UserSignUp implements Serializable {
   /** lastName */
   private String lastName;
   
+  /** Password */
+  private String password;
+  
+  /** Age */
+  private int age;
+  
+  /** Email */
+  private String email;
+  
+  /** User Id */
+  private String UserId;
+  
 }
