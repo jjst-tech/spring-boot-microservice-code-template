@@ -9,6 +9,8 @@
  */
 package com.richard.application.ws.ui.controllers;
 
+import javax.validation.Valid;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -66,7 +68,7 @@ public class UserController {
    * http://localhost:8080/ws/users/create
    */
   @PostMapping("/create")
-  public ResponseEntity<UserRest> createUser(@RequestBody UserSignUp userSignUp) {
+  public ResponseEntity<UserRest> createUser(@Valid @RequestBody UserSignUp userSignUp) {
     
     ModelMapper modelMapper = new ModelMapper();
     UserRest userRest = modelMapper.map(userSignUp, UserRest.class);
