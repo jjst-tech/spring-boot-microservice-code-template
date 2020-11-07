@@ -9,14 +9,20 @@
  */
 package com.richard.application.ws.ui.controllers;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.richard.application.ws.ui.model.requests.UserSignUp;
+import com.richard.application.ws.ui.model.responses.UserRest;
 
 /**
  * @author richard
@@ -53,6 +59,20 @@ public class UserController {
       @RequestParam(value = "sort", required = true) String sort) {
     return new ResponseEntity<>("Get user with: " + page + " and limit: " + limit + " and sort: " + sort,
         HttpStatus.OK);
+  }
+  
+  /**
+   * Return Type ResponseEntity<UserRest> Test:
+   * http://localhost:8080/ws/users/create
+   */
+  @PostMapping("/create")
+  public ResponseEntity<UserRest> createUser(@RequestBody UserSignUp userSignUp) {
+    
+    ModelMapper modelMapper = new ModelMapper();
+    UserRest userRest = modelMapper.map(userSignUp, UserRest.class);
+    userRest.setUserId("AFTYASDF");
+    
+    return new ResponseEntity<UserRest>(userRest, HttpStatus.CREATED);
   }
   
 }
